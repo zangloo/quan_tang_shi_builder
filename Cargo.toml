@@ -1,0 +1,23 @@
+[package]
+name = "quan_tang_shi_builder"
+version = "0.1.0"
+authors = ["zang.loo"]
+homepage = "https://github.com/zangloo/chinese-poetry"
+repository = "https://github.com/zangloo/chinese-poetry.git"
+description = "通过https://github.com/chinese-poetry/chinese-poetry/tree/master/quan_tang_shi源数据，生成全唐诗epub"
+keywords = ["全唐诗"]
+readme = "README.md"
+categories = ["command-line-utilities"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "3.0", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_derive = "1.0"
+serde_json = "1.0"
+rand = "0.8"
+handlebars = "4.3"
+epub-builder = "0.5"
