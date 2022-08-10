@@ -1,0 +1,26 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: cargo run --release 全唐诗.epub
+    - name: Publish
+      uses: softprops/action-gh-release@v1
+      with:
+        files: 全唐诗.epub
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
